@@ -5,6 +5,8 @@ import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -13,6 +15,7 @@ import tn.esprit.rh.achat.services.IProduitService;
 
 @SpringBootTest
 @TestMethodOrder(OrderAnnotation.class)
+@ExtendWith(MockitoExtension.class)
 public class ProduitTestServiceImpl {
 	
 	

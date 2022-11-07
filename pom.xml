@@ -83,7 +83,7 @@
     <version>2.8.2</version>
     <configuration>
         <altDeploymentRepository>
-            deploymentRepo::folder://http://192.168.1.36:8081
+            deploymentRepo::folder:://http://192.168.1.36:8081
         </altDeploymentRepository>
     </configuration>
 </plugin>

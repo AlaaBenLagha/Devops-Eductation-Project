@@ -32,6 +32,8 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		
+		
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -58,9 +60,9 @@
 	
 	<distributionManagement>
   	 <repository>
- 	  <id>deploymentRepo</id>
+ 	  <id> deploymentRepo</id>
 		<url>http://192.168.1.36:8081/repository/maven-releases/</url>
-		</repository>
+	 </repository>
 	 </distributionManagement>
 
 	<build>
@@ -82,6 +84,7 @@
                                <artifactId>maven-resources-plugin</artifactId>
                                <version>3.1.0</version>
                      </plugin>
+                     
 		</plugins>
 	</build>
 	

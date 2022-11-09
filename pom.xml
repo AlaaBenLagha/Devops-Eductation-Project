@@ -62,6 +62,7 @@
 		<url>http://192.168.1.10:8081/deploymentRepo/maven-releases/</url>
 		</repository>
 	</distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -83,7 +84,6 @@
                      <version>3.1.0</version>
             </plugin>
 		</plugins>
-		
 	</build>
 
 </project>

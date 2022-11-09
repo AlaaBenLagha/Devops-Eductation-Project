@@ -59,8 +59,14 @@
 	<distributionManagement>
 	    <repository>
 	    <id> deploymentRepo</id>
+	    <name>Nexus Releases</name>
 		<url>http://192.168.1.10:8081/repository/maven-releases/</url>
 		</repository>
+		<snapshotRepository>
+            <id> deploymentRepo</id>
+            <name>Nexus Snapshots</name>
+            <url>http://192.168.1.10:8081/repository/maven-snapshots</url>
+        </snapshotRepository>
 	</distributionManagement>
 
 	<build>
@@ -81,7 +87,7 @@
             <plugin>
                      <groupId>org.apache.maven.plugins</groupId>
                      <artifactId>maven-resources-plugin</artifactId>
-                     <version>3.1.0</version>
+                     <version>3.2.0</version>
             </plugin>
 		</plugins>
 	</build>

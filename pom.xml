@@ -59,7 +59,13 @@
 
 	</dependencies>
 	
-	
+	<distributionManagement>
+	    <repository>
+	    <id>deploymentRepo</id>
+	    <name>Nexus Releases</name>
+		<url>http://192.168.1.10:8081/repository/maven-releases/</url>
+		</repository>
+	</distributionManagement>
 
 	<build>
 		<plugins>
@@ -92,10 +98,6 @@
       <artifactId>nexus-staging-maven-plugin</artifactId>
       <version>1.6.6</version>
       <extensions>true</extensions>
-       <configuration>
-        <serverId>deploymentRepo</serverId>
-        <nexusUrl>http://192.168.1.10:8081/repository/maven-releases/</nexusUrl>
-       </configuration>
      </plugin>
      
      <plugin>
@@ -111,11 +113,5 @@
 		
 		
 	</build>
-	<distributionManagement>
-	    <repository>
-	    <id>deploymentRepo</id>
-	    <name>Nexus Releases</name>
-		<url>http://192.168.1.10:8081/repository/maven-releases/</url>
-		</repository>
-	</distributionManagement>
+	
 </project>

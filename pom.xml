@@ -102,7 +102,7 @@
         <artifactId>maven-deploy-plugin</artifactId>
         	<configuration>
 		<altDeploymentRepository>
-		 deploymentRepo::folder::http://192.168.1.10:8081
+		 deploymentRepo::deploymentRepo::http://192.168.1.10:8081
 		</altDeploymentRepository>
 	</configuration>
 

@@ -100,11 +100,7 @@
 			<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-deploy-plugin</artifactId>
-        	<configuration>
-		<altDeploymentRepository>
-		 deploymentRepo::repository::http://192.168.1.10:8081
-		</altDeploymentRepository>
-	</configuration>
+     
 
  
         </plugin>

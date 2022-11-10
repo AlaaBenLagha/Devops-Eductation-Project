@@ -94,7 +94,7 @@
       <extensions>true</extensions>
        <configuration>
         <serverId>deploymentRepo</serverId>
-        <nexusUrl>http://192.168.1.10:8081/repository/maven-releases//</nexusUrl>
+        <nexusUrl>http://192.168.1.10:8081/repository/maven-releases/</nexusUrl>
        </configuration>
      </plugin>
      

@@ -1,27 +1,6 @@
 version: '2'
-services:
- sonarqube:
-  image:
-   sonarqube:8.9.7-community 
-   ports: 
-   - "9000:9000"
-   volumes: 
-   - 'SonarQube_data:/opt/SonarQube/data' 
-   - 'SonarQube_extensions:/opt/SonarQube/extensions' 
-   - 'SonarQube_logs:/opt/SonarQube/logs' 
-  nexus:
-   image: sonatype/nexus3 ports: - "8081:8081"
-   volumes: 
-   - 'nexus-data:/nexus-data' 
-  volumes: 
-   SonarQube_data: 
-   SonarQube_extensions: 
-   SonarQube_logs: 
-   nexus-data:
-   
-   services:
-
-  mysql-db:
+services:   
+   mysql-db:
     image: mysql:5.6
     container_name: mysql-db
     environment:
@@ -33,8 +12,9 @@ services:
         protocol: tcp 
     volumes:
       - /home/mysql/data:/home/vagrant/mysql:rw
-  
-  springboot-app:
+      
+      
+    springboot-app:
   
     image: alaaben/devops_project:latest
     container_name: springboot-app
@@ -49,8 +29,6 @@ services:
       MYSQL_DATABASE: achatdb
     restart: on-failure
     ports:
-      - 8084:8084 
+      - 8089:8089 
     links:
-      - mysql-db
-   
-  
+      - mysql-db  

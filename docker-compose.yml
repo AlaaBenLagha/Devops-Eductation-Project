@@ -1,5 +1,25 @@
 version: '2'
 services:
+ sonarqube:
+  image:
+   sonarqube:8.9.7-community 
+   ports: 
+   - "9000:9000"
+   volumes: 
+   - 'SonarQube_data:/opt/SonarQube/data' 
+   - 'SonarQube_extensions:/opt/SonarQube/extensions' 
+   - 'SonarQube_logs:/opt/SonarQube/logs' 
+  nexus:
+   image: sonatype/nexus3 ports: - "8081:8081"
+   volumes: 
+   - 'nexus-data:/nexus-data' 
+  volumes: 
+   SonarQube_data: 
+   SonarQube_extensions: 
+   SonarQube_logs: 
+   nexus-data:
+   
+   services:
 
   mysql-db:
     image: mysql:5.6
@@ -32,3 +52,5 @@ services:
       - 8084:8084 
     links:
       - mysql-db
+   
+  

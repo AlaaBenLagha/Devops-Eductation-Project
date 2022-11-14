@@ -14,4 +14,24 @@ services:
       - /home/mysql/data:/home/vagrant/mysql:rw
       
       
+   springboot-app:
+  
+    image: alaaben/devops_project:latest
+    container_name: springboot-app
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/achatdb?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      MYSQL_HOST: mysql-db
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: achatdb
+    restart: on-failure
+    ports:
+      - 8084:8084
+    links:
+      - mysql-db
+      
+      
     

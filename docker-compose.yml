@@ -13,8 +13,7 @@ services:
     volumes:
       - /home/mysql/data:/home/vagrant/mysql:rw
       
-      
-   springboot-app:
+    springboot-app:
   
     image: alaaben/devops_project:latest
     container_name: springboot-app
@@ -29,9 +28,9 @@ services:
       MYSQL_DATABASE: achatdb
     restart: on-failure
     ports:
-      - 8084:8084
+      - 8084:8084 
     links:
-      - mysql-db
-      
+      - mysql-db  
+
       
     

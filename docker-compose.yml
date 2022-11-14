@@ -16,7 +16,7 @@ services:
    springboot-app:
 
     image: alaaben/devops_project:lastest
-    container_name: springboot-app
+    container_name: springbootApp
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/achatdb?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: root

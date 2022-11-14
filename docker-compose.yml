@@ -13,10 +13,10 @@ services:
     volumes:
       - /home/mysql/data:/home/vagrant/mysql:rw
       
-    springboot-app:
-  
-    image: alaaben/devops_project:latest
-    container_name: springboot-app
+   springboot-app:
+
+    image: alaaben/devops_project
+    container_name: springap
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/achatdb?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: root

@@ -27,14 +27,13 @@ public class SpringFoxSwaggerConfig {
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2)
-				.apiInfo(apiEndPointsInfo())
-				.securityContexts(Collections.singletonList(securityContext()))
-				.securitySchemes(Arrays.asList(apiKey()))
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("com.esprit.examen.controller"))
+				.apis(RequestHandlerSelectors.any())
 				.paths(PathSelectors.any())
-				.build();
+				.build()
+				.apiInfo(apiEndPointsInfo());
 	}
+	
 	
     private ApiInfo apiEndPointsInfo() {
         return new ApiInfoBuilder()
@@ -44,22 +43,5 @@ public class SpringFoxSwaggerConfig {
                 .build();
     }
 
-	private ApiKey apiKey() {
-		return new ApiKey("Bearer", AUTHORIZATION_HEADER, "header");
-	}
 	
-	
-	private SecurityContext securityContext() {
-		return SecurityContext.builder()
-				.securityReferences(defaultAuth())
-				.build();
-	}
-
-	private List<SecurityReference> defaultAuth() {
-		AuthorizationScope authorizationScope = new AuthorizationScope("global", "accessEverything");
-		AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
-		authorizationScopes[0] = authorizationScope;
-		return Arrays.asList(new SecurityReference("Bearer", authorizationScopes)); 
-
-	}
 }

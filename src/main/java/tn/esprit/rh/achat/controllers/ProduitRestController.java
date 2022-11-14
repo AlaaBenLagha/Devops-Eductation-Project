@@ -1,6 +1,8 @@
 package tn.esprit.rh.achat.controllers;
 
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.rh.achat.entities.Produit;
@@ -18,6 +20,8 @@ public class ProduitRestController {
 	@Autowired
 	IProduitService produitService;
 
+	
+	@ApiOperation(value = "Recupérer liste produits")
 	// http://localhost:8089/SpringMVC/produit/retrieve-all-produits
 	@GetMapping("/retrieve-all-produits")
 	@ResponseBody
